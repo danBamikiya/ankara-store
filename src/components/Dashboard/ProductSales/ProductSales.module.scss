@@ -1,0 +1,39 @@
+@import "./../../../styles/variables.scss";
+
+.productsales {
+  flex: 4;
+  height: 100%;
+  border-radius: $borderRadius;
+  padding: 32px;
+
+  margin-right: 40px;
+
+  &.light_mode {
+    background: $white;
+    border: 1px solid $dividerLineLight;
+  }
+  &.dark_mode {
+    background: $lightBlack;
+    border: 1px solid $dividerLine;
+  }
+
+  &_header {
+    display: flex;
+    margin-bottom: 24px;
+
+    &_title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: $letterSpacing;
+      line-height: 25px;
+
+      &.light_mode {
+        color: $black;
+      }
+
+      &.dark_mode {
+        color: $white;
+      }
+    }
+  }
+}

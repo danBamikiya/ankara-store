@@ -1,0 +1,116 @@
+@import "./../../../styles/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 42px;
+  min-width: 900px;
+
+  &_title {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: $letterSpacing;
+    line-height: 30px;
+
+    &.light_mode {
+      color: $black;
+    }
+
+    &.dark_mode {
+      color: $white;
+    }
+  }
+
+  &_content {
+    display: flex;
+    align-items: center;
+    height: 24px;
+
+    &_links {
+      display: flex;
+      align-items: center;
+      height: 24px;
+
+      .link_icon {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+      }
+
+      .link_icon_notification {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          right: 3px;
+          top: 3px;
+          background: $green;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &_divider {
+      height: 100%;
+      width: 1px;
+      margin: 0 32px;
+
+      &.light_mode {
+        background: $dividerLine;
+      }
+
+      &.dark_mode {
+        background: $dividerLine;
+      }
+    }
+
+    &_profile {
+      display: flex;
+      align-items: center;
+
+      .profile_name {
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        margin-right: 24px;
+        letter-spacing: $letterSpacing;
+
+        &.light_mode {
+          color: $black;
+        }
+
+        &.dark_mode {
+          color: $white;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .profile_img {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0px 0px 3px rgba($dark, $alpha: 0.3);
+
+        img {
+          border-radius: 50%;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import "./../../styles/variables.scss";
+
+.scroll {
+  position: relative;
+  height: 100vh;
+  overflow: hidden auto;
+  z-index: 1;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &.light_mode::-webkit-scrollbar-track {
+    background: $white;
+  }
+
+  &.dark_mode::-webkit-scrollbar-track {
+    background: $lightBlack;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: $borderRadius;
+  }
+
+  &.light_mode::-webkit-scrollbar-thumb {
+    background: $dividerLineLight;
+  }
+
+  &.dark_mode::-webkit-scrollbar-thumb {
+    background: $dividerLine;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: $borderRadius;
+  }
+
+  .light_mode {
+    ::-webkit-scrollbar-track {
+      background: $white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: $dividerLineLight;
+    }
+  }
+
+  .dark_mode {
+    ::-webkit-scrollbar-track {
+      background: $lightBlack;
+    }
+
+    ::-webkit-slider-thumb {
+      background: $dividerLine;
+    }
+  }
+}
+
+.dashboard_container {
+  margin-left: $appbarwidth;
+  width: calc(100% - 15.875rem);
+
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 40px 120px;
+
+  &.light_mode {
+    background: $lightGray;
+  }
+
+  &.dark_mode {
+    background: $dark;
+  }
+}
+
+.dashboard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &_bottom {
+    display: flex;
+    margin-top: 40px;
+    height: 450px;
+  }
+}

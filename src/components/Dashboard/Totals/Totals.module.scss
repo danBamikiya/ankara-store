@@ -1,0 +1,73 @@
+@import "./../../../styles/variables.scss";
+
+.totals {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  min-width: 900px;
+
+  &_card {
+    &:not(:last-child) {
+      margin-right: 40px;
+    }
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    border-radius: $borderRadius;
+
+    &.light_mode {
+      background: $white;
+      border: 1px solid $dividerLineLight;
+    }
+    &.dark_mode {
+      background: $lightBlack;
+      border: 1px solid $dividerLine;
+    }
+
+    &_icon {
+      padding: 10px;
+      margin-right: 24px;
+      border-radius: $borderRadius;
+      background: linear-gradient(180deg, #e8ffef 0%, #c1f8d2 100%);
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+      font-weight: 700;
+
+      .title {
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: $letterSpacing;
+
+        &.light_mode {
+          color: $darkGray;
+        }
+        &.dark_mode {
+          color: $white;
+        }
+      }
+
+      .total {
+        font-size: 23px;
+
+        &.light_mode {
+          color: $black;
+        }
+
+        &.dark_mode {
+          color: $white;
+        }
+      }
+    }
+  }
+}

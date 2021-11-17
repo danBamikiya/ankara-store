@@ -1,0 +1,71 @@
+@import "./../../../../styles/variables.scss";
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  &_head {
+    border-radius: $borderRadius;
+
+    &.light_mode {
+      background: $lightGray;
+    }
+    &.dark_mode {
+      background: $lightBlack2;
+    }
+  }
+
+  thead tr {
+    display: flex;
+    text-align: left;
+  }
+
+  tbody {
+    display: block;
+    overflow: auto;
+    height: 280px;
+  }
+
+  tbody tr {
+    display: flex;
+    text-align: left;
+  }
+
+  th,
+  td {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: $letterSpacing;
+    line-height: 16px;
+    padding: 16px 24px;
+  }
+
+  th:last-child {
+    margin-right: 15px;
+  }
+
+  td {
+    font-weight: 400;
+    white-space: nowrap;
+  }
+}
+
+.table.light_mode {
+  th,
+  td {
+    color: $black;
+  }
+  td {
+    border-bottom: 1px solid $dividerLineLight;
+  }
+}
+.table.dark_mode {
+  th,
+  td {
+    color: $white;
+  }
+  td {
+    border-bottom: 1px solid $dividerLine;
+  }
+}
