@@ -55,4 +55,4 @@ run-deploy: check-app-name
 .PHONY: check-app-health
 check-app-health: check-app-name
 	chmod u+r+x ./health-check.sh
-	@sh -c "./health-check https://$(APP_NAME).herokuapp.com/"
+	@sh -c "./health-check.sh https://$(APP_NAME).herokuapp.com/"
