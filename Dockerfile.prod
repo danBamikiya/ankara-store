@@ -1,0 +1,24 @@
+FROM node:14-slim as build
+
+WORKDIR /app
+
+COPY  package*.json ./
+
+RUN npm i
+
+COPY . .
+
+RUN npm run build
+
+# nginx as a web server for production build
+FROM nginx:1.18-alpine
+
+# remove default nginx index page
+RUN rm -rf /usr/share/nginx/html/*
+
+# copy production build to nginx directory
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
