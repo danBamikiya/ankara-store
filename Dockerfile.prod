@@ -21,4 +21,4 @@ COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 80
 
-CMD ["/bin/bash", "-c", "sudo nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "sudo nginx -g 'daemon off;'"]
