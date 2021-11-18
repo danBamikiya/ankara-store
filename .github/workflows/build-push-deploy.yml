@@ -38,10 +38,10 @@ jobs:
       # Build the Docker image
       - name: Build
         run: |-
-          make build
+          make build APP_NAME=${{ env.APP_NAME }}
       - name: Publish to DockerHub
         run: |-
-          make push DOCKERHUB_USERNAME=${{ env.REGISTRY_USERNAME }}
+          make push DOCKERHUB_USERNAME=${{ env.REGISTRY_USERNAME }} APP_NAME=${{ env.APP_NAME }}
       - name: Publish to Heroku
         run: |-
           make heroku-push DOCKERHUB_USERNAME=${{ env.REGISTRY_USERNAME }} APP_NAME=${{ env.APP_NAME }}
