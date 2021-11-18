@@ -15,11 +15,11 @@ build: check-app-name
 	docker build -f Dockerfile.prod -t $(LOCAL_TAG) .
 
 .PHONY: run-build
-run-build:
+run-build: check-app-name
 	docker run -d -p 80:80 --name ankara-store-app --rm $(LOCAL_TAG)
 
 .PHONY: push
-push:
+push: check-app-name
 	echo "tagging docker image..."
 	docker tag $(LOCAL_TAG) $(REMOTE_TAG)
 	echo "pushing image to dockerhub..."
