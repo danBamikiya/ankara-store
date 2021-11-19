@@ -16,7 +16,7 @@ build: check-app-name
 
 .PHONY: run-build
 run-build: check-app-name
-	docker run -d -p 80:80 --name ankara-store-app --rm $(LOCAL_TAG)
+	docker run -d -p 8080:8080 --name ankara-store-app --rm $(LOCAL_TAG)
 
 .PHONY: push
 push: check-app-name
